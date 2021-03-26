@@ -32,7 +32,7 @@ function init(){
         //hisRate.push(   Number(response.data.rates.TND.toFixed(3))   );
     
         hisRate.push( Number(response.data.rates.TND.toFixed(3)) );
-    
+        chartH();
       });
         
       };
@@ -40,7 +40,7 @@ function init(){
       hisRate.unshift("TND");
     
       console.log(hisRate[1]);
-      chartH();
+      
 };
 // function  getHisrate() {
 //   for(let i =0;i<5;i++){
