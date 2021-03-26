@@ -1,4 +1,6 @@
 let data = {};
+let Apidate = [];
+let hisRate = [];
 function init(){
     //http://data.fixer.io/api/2020-12-31?access_key=7ddf0cca508c63297f0a700c18740446&format=1&%20base%20=%20GB&%20symbols%20=%20USD,TND,EUR
     axios.get('http://data.fixer.io/api/latest?access_key=7ddf0cca508c63297f0a700c18740446&format=1')
@@ -8,10 +10,57 @@ function init(){
       data = response;
       console.log(data);
         ratePut();
-        chartH();
+        dateNum();
     });
-
+    let hisDate=[];
+    for (let i=0;i<5;i++) {
+      let today = new Date();
+      let nowDate = today.getDate()-i;
+      let nowyear = today.getFullYear();
+      let nowMonth = today.getMonth()+1;
+      let date = `${nowyear}-0${nowMonth}-${nowDate}`;
+      hisDate.push(date);
+    }
+    Apidate = hisDate.reverse();
+    console.log(Apidate);
+    //getHisrate();
+    for(let i =0;i<5;i++){
+      axios.get(`http://data.fixer.io/api/${Apidate[i]}?access_key=7ddf0cca508c63297f0a700c18740446&format=1&%20base%20=%20GB&%20symbols%20=%20USD,TND,EUR`)
+      .then(function (response) {
+        // handle success
+        //console.log(response.data.rates.TND.toFixed(3));
+        //hisRate.push(   Number(response.data.rates.TND.toFixed(3))   );
+    
+        hisRate.push( Number(response.data.rates.TND.toFixed(3)) );
+    
+      });
+        
+      };
+    
+      hisRate.unshift("TND");
+    
+      console.log(hisRate[1]);
+      chartH();
 };
+// function  getHisrate() {
+//   for(let i =0;i<5;i++){
+//   axios.get(`http://data.fixer.io/api/${Apidate[i]}?access_key=7ddf0cca508c63297f0a700c18740446&format=1&%20base%20=%20GB&%20symbols%20=%20USD,TND,EUR`)
+//   .then(function (response) {
+//     // handle success
+//     //console.log(response.data.rates.TND.toFixed(3));
+//     //hisRate.push(   Number(response.data.rates.TND.toFixed(3))   );
+
+//     hisRate.push( Number(response.data.rates.TND.toFixed(3)) );
+
+//   });
+    
+//   };
+
+//   hisRate.unshift("TND");
+
+//   console.log(hisRate[1]);
+//   chartH();
+// }
  
 function ratePut(){
     //div範例
@@ -36,7 +85,7 @@ function ratePut(){
      let rateH ='';
      //把資料列在table上
     rate.forEach(function(item,index){
-        let rateAdd = `<tr>
+        let rateAdd = `<tr >
         <td>${index+1}</td>
         <td>${item.coun}</td>
         <td>${item.rat}</td>
@@ -52,16 +101,30 @@ function chartH(){
         bindto: '#chart',
         data: {
           columns: [
-            ['data1', 30, 200, 100, 400, 150, 250],
-          
+           // [hisRate[0], 3.264, 3.26, 3.271, 3.272, 3.275],
+            hisRate,
           ]
         }
+        
     });
-    
+    console.log(hisRate);
 };
 let meu = document.querySelector("#menuTnd");
 console.log(meu.textContent);
-let today = new Date();
-console.log(today.getDate() );
+//計算日期
+function dateNum(){
+  //   let hisDate=[];
+  // for (let i=0;i<5;i++) {
+  //   let today = new Date();
+  //   let nowDate = today.getDate()-i;
+  //   let nowyear = today.getFullYear();
+  //   let nowMonth = today.getMonth()+1;
+  //   let date = `${nowyear}-0${nowMonth}-${nowDate}`;
+  //   hisDate.push(date);
+  // }
+  // Apidate = hisDate.reverse();
+  // console.log(Apidate);
+  // getHisrate();
+};
 
 init();
