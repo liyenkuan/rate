@@ -10,9 +10,8 @@ function init(){
       data = response;
       console.log(data);
         ratePut();
-        dateNum();
     });
-    let hisDate=[];
+    let hisDate=[];//計算日期
     for (let i=0;i<5;i++) {
       let today = new Date();
       let nowDate = today.getDate()-i;
@@ -22,9 +21,10 @@ function init(){
       hisDate.push(date);
     }
     Apidate = hisDate.reverse();
-    console.log(Apidate);
+    //console.log(Apidate);
     //getHisrate();
     for(let i =0;i<5;i++){
+      //載入歷史匯率
       axios.get(`http://data.fixer.io/api/${Apidate[i]}?access_key=7ddf0cca508c63297f0a700c18740446&format=1&%20base%20=%20GB&%20symbols%20=%20USD,TND,EUR`)
       .then(function (response) {
         // handle success
@@ -33,40 +33,23 @@ function init(){
     
         hisRate.push( Number(response.data.rates.TND.toFixed(3)) );
         chartH();
+    
       });
         
       };
     
       hisRate.unshift("TND");
     
-      console.log(hisRate[1]);
+      //console.log(hisRate[1]);
       
 };
-// function  getHisrate() {
-//   for(let i =0;i<5;i++){
-//   axios.get(`http://data.fixer.io/api/${Apidate[i]}?access_key=7ddf0cca508c63297f0a700c18740446&format=1&%20base%20=%20GB&%20symbols%20=%20USD,TND,EUR`)
-//   .then(function (response) {
-//     // handle success
-//     //console.log(response.data.rates.TND.toFixed(3));
-//     //hisRate.push(   Number(response.data.rates.TND.toFixed(3))   );
 
-//     hisRate.push( Number(response.data.rates.TND.toFixed(3)) );
-
-//   });
-    
-//   };
-
-//   hisRate.unshift("TND");
-
-//   console.log(hisRate[1]);
-//   chartH();
-// }
- 
 function ratePut(){
     //div範例
     let rate = [];//最終資料
     let showTable = document.querySelector("tbody")
-    const country = Object.keys(data.data.rates);// 抓出api的國家
+    //const country = Object.keys(data.data.rates);// 抓出api的國家
+    const country = ["USD","HKD","GBP","AUD","CAD","SGD","CHF","TND","JPY","ZAR","SEK","NZD","THB","PHP","IDR","EUR","KRW","VND","MYR","CNY"];
     //console.log(country);
     //用迴圈建立有country的值加上該國家的匯率的陣列，資料整理
     country.forEach(function(item,index){     
@@ -107,24 +90,8 @@ function chartH(){
         }
         
     });
-    console.log(hisRate);
+   // console.log(hisRate);
 };
 let meu = document.querySelector("#menuTnd");
 console.log(meu.textContent);
-//計算日期
-function dateNum(){
-  //   let hisDate=[];
-  // for (let i=0;i<5;i++) {
-  //   let today = new Date();
-  //   let nowDate = today.getDate()-i;
-  //   let nowyear = today.getFullYear();
-  //   let nowMonth = today.getMonth()+1;
-  //   let date = `${nowyear}-0${nowMonth}-${nowDate}`;
-  //   hisDate.push(date);
-  // }
-  // Apidate = hisDate.reverse();
-  // console.log(Apidate);
-  // getHisrate();
-};
-
 init();
