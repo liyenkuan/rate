@@ -20,7 +20,7 @@
 <meta name="theme-color" content="#7952b3">
 
 
-    <style>
+    <!-- <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -34,7 +34,7 @@
           font-size: 3.5rem;
         }
       }
-    </style>
+    </style> -->
 
     
     <!-- Custom styles for this template -->
@@ -43,11 +43,11 @@
   <body>
     
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">rate system</a>
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">KKO 匯率紀錄</a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+  <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
   
 </header>
 
@@ -130,12 +130,11 @@
         </ul>
       </div>
     </nav>
-
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2" id="chart1">曲線圖</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
-            <div class="dropdown">
+            <!-- <div class="dropdown">
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                   選擇貨幣
                 </a>
@@ -145,8 +144,12 @@
                   <li><a class="dropdown-item" href="#">AED</a></li>
                   <li><a class="dropdown-item" href="#">EUR</a></li>
                 </ul>
-              </div>
-  
+              </div> -->
+              <select class="form-select btn-secondary" aria-label="Default select example">
+                <option value="TWD">台幣TWD</option>
+                <option value="USD">美金USA</option>
+                <option value="EUR">EUR</option>
+              </select>
         </div>
       </div>
       <div id="chart" ></div>
@@ -174,6 +177,12 @@
             </tr>
           </tbody>
         </table>
+      </div>
+      <h1 class="h2" >計算幣值</h1>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+        <div class="col-md-3"></div><div  class="col-md-3"></div>
+        <input type="text" class="form-control" placeholder="Server" aria-label="Server">
       </div>
     </main>
   </div>

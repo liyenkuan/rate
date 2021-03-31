@@ -1,7 +1,25 @@
 let data = {};
 let Apidate = [];
+let hisR = [];
 let hisRate = [];
+
+
+let sel = document.querySelector(".form-select ");//選擇貨幣
+function selRate() {
+  console.log(hisR);
+  let selValue = sel.value;
+  console.log(selValue);
+  hisRate[0] = selValue;
+  hisRate[1] = hisR[0].data.rates[selValue];
+  hisRate[2] = hisR[1].data.rates[selValue];
+  hisRate[3] = hisR[2].data.rates[selValue];
+  hisRate[4] = hisR[3].data.rates[selValue];
+  hisRate[5] = hisR[4].data.rates[selValue];
+  chartH();
+}
+sel.addEventListener("click",selRate);
 function init(){
+
     //http://data.fixer.io/api/2020-12-31?access_key=7ddf0cca508c63297f0a700c18740446&format=1&%20base%20=%20GB&%20symbols%20=%20USD,TND,EUR
     axios.get('http://data.fixer.io/api/latest?access_key=7ddf0cca508c63297f0a700c18740446&format=1')
     .then(function (response) {
@@ -21,25 +39,26 @@ function init(){
       hisDate.push(date);
     }
     Apidate = hisDate.reverse();
-    //console.log(Apidate);
+    console.log(Apidate);
     //getHisrate();
     for(let i =0;i<5;i++){
       //載入歷史匯率
+      
+      // console.log(postRate);
       axios.get(`http://data.fixer.io/api/${Apidate[i]}?access_key=7ddf0cca508c63297f0a700c18740446&format=1&%20base%20=%20GB&%20symbols%20=%20USD,TND,EUR`)
       .then(function (response) {
         // handle success
         //console.log(response.data.rates.TND.toFixed(3));
-        //hisRate.push(   Number(response.data.rates.TND.toFixed(3))   );
-    
-        hisRate.push( Number(response.data.rates.TND.toFixed(3)) );
-        chartH();
-    
+         hisRate.push(Number(response.data.rates.TWD.toFixed(3)));
+        hisR.push(response);
+         chartH();
       });
-        
       };
-    
-      hisRate.unshift("TND");
-    
+      console.log(hisR);
+      hisRate.unshift("TWD");
+      selRate();
+      chartH();
+      
       //console.log(hisRate[1]);
       
 };
@@ -79,7 +98,9 @@ function ratePut(){
     });
      showTable.innerHTML = rateH;
 };
+
 function chartH(){
+  console.log(hisR);
     var chart = c3.generate({
         bindto: '#chart',
         data: {
@@ -88,10 +109,7 @@ function chartH(){
             hisRate,
           ]
         }
-        
     });
-   // console.log(hisRate);
 };
-let meu = document.querySelector("#menuTnd");
-console.log(meu.textContent);
+
 init();
