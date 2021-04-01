@@ -4,7 +4,7 @@ let hisR = [];
 let hisRate = [];
 
 
-let sel = document.querySelector(".form-select ");//選擇貨幣
+let sel = document.querySelector(".selcun ");//選擇貨幣
 function selRate() {
   console.log(hisR);
   let selValue = sel.value;
@@ -32,11 +32,24 @@ function init(){
     let hisDate=[];//計算日期
     for (let i=0;i<5;i++) {
       let today = new Date();
-      let nowDate = today.getDate()-i;
+      today = today.setDate( today.getDate()-i);
+      today=new Date(today);
+      let nowDate =today.getDate();
+      console.log(today.getDate());
       let nowyear = today.getFullYear();
       let nowMonth = today.getMonth()+1;
-      let date = `${nowyear}-0${nowMonth}-${nowDate}`;
-      hisDate.push(date);
+      if(nowMonth<10) {nowMonth =`0${nowMonth}`};
+      if(nowDate<10){
+        nowDate = `0${nowDate}`;
+        //nowMonth =  `0${nowMonth}`;
+        console.log(nowMonth);
+        let date = `${nowyear}-${nowMonth}-${nowDate}`;
+        hisDate.push(date);
+      }else{
+        let date = `${nowyear}-${nowMonth}-${nowDate}`;
+        hisDate.push(date);
+      }
+
     }
     Apidate = hisDate.reverse();
     console.log(Apidate);
@@ -48,7 +61,7 @@ function init(){
       axios.get(`http://data.fixer.io/api/${Apidate[i]}?access_key=7ddf0cca508c63297f0a700c18740446&format=1&%20base%20=%20GB&%20symbols%20=%20USD,TND,EUR`)
       .then(function (response) {
         // handle success
-        //console.log(response.data.rates.TND.toFixed(3));
+        console.log(response);
          hisRate.push(Number(response.data.rates.TWD.toFixed(3)));
         hisR.push(response);
          chartH();

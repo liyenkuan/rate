@@ -51,7 +51,7 @@
   
 </header>
 
-<div class="container-fluid">
+<div class="container">
   <div class="row">
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
       <div class="position-sticky pt-3">
@@ -70,9 +70,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="#curv">
               <span data-feather="shopping-cart"></span>
-              Products
+              計算幣值
             </a>
           </li>
           <li class="nav-item">
@@ -145,7 +145,7 @@
                   <li><a class="dropdown-item" href="#">EUR</a></li>
                 </ul>
               </div> -->
-              <select class="form-select btn-secondary" aria-label="Default select example">
+              <select class="form-select btn-secondary selcun" aria-label="Default select example">
                 <option value="TWD">台幣TWD</option>
                 <option value="USD">美金USA</option>
                 <option value="EUR">EUR</option>
@@ -178,12 +178,37 @@
           </tbody>
         </table>
       </div>
-      <h1 class="h2" >計算幣值</h1>
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username">
-        <div class="col-md-3"></div><div  class="col-md-3"></div>
-        <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+      <div class="row">
+        <h1 class="h2" id="curv">計算幣值</h1>
+        <div class="col-md-12 curValue " >一歐元等於33.8台幣</div>
       </div>
+
+     
+        <div class="input ">
+          <div class="row  curunt">
+        <input type="text" class="form-control rounded-pill   " placeholder="請輸入" aria-label="Username">
+        <!-- <div class="col-md-1"></div> -->
+      </div>
+      <div class="row  curunt">
+        <select class="form-select   btn-secondary " aria-label="Default select example">
+          <option value="TWD">台幣TWD</option>
+          <option value="USD">美金USD</option>
+          <option value="EUR">歐元EUR</option>
+        </select>
+      </div>
+        <div class="row  curunt">
+      <input type="text" class="form-control rounded-pill   " placeholder="請輸入" aria-label="Username">
+      <!-- <div class="col-md-1"></div> -->
+    </div>
+    <div class="row  curunt">
+      <select class="form-select   btn-secondary " aria-label="Default select example">
+        <option value="TWD">台幣TWD</option>
+        <option value="USD">美金USD</option>
+        <option value="EUR">歐元EUR</option>
+      </select>
+    </div>
+    <button  class=" btn btn-secondary rounded-pill  clckb " >送出</button>
+    </div>
     </main>
   </div>
 </div>
@@ -191,3 +216,4 @@
 <script src="main.js"></script> 
   </body>
 </html>
+s

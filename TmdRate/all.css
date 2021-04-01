@@ -107,3 +107,34 @@ body {
       text-decoration: none;
       color: #000;
   }
+  .curValue{
+    font-size: 40px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #DDDDDD;
+    padding: 20px;
+    border-radius: 30px 30px 30px 30px;
+    /* font-style: oblique; */
+    font-weight:bold;
+    /* color: 	#5599FF; */
+ 
+  }
+.input{
+  display: flex;
+  justify-content: center;
+  padding-top: 30PX;
+  padding-bottom: 200px;
+  border: 1px solid #000000 ;
+  flex-wrap: wrap;
+
+}
+.curunt{
+  margin: 10px;
+
+}
+.clckb{
+ width: 50%;
+ margin: 50px;
+
+ font-size: 30px;
+}
