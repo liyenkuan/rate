@@ -51,7 +51,7 @@
   
 </header>
 
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
       <div class="position-sticky pt-3">
@@ -134,17 +134,6 @@
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2" id="chart1">曲線圖</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
-            <!-- <div class="dropdown">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                  選擇貨幣
-                </a>
-              
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <li id = "menuTnd"><a class="dropdown-item" href="#">TND</a></li>
-                  <li><a class="dropdown-item" href="#">AED</a></li>
-                  <li><a class="dropdown-item" href="#">EUR</a></li>
-                </ul>
-              </div> -->
               <select class="form-select btn-secondary selcun" aria-label="Default select example">
                 <option value="TWD">台幣TWD</option>
                 <option value="USD">美金USA</option>
@@ -153,8 +142,6 @@
         </div>
       </div>
       <div id="chart" ></div>
-      <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
-
       <h2>匯率表格</h2>
       <div class="table-responsive">
         <table class="table table-striped table-md" id = "currentRate">
@@ -180,34 +167,36 @@
       </div>
       <div class="row">
         <h1 class="h2" id="curv">計算幣值</h1>
-        <div class="col-md-12 curValue " >一歐元等於33.8台幣</div>
+        <div class="col-md-12 curValue " >請輸入數值</div>
       </div>
 
      
         <div class="input ">
-          <div class="row  curunt">
-        <input type="text" class="form-control rounded-pill   " placeholder="請輸入" aria-label="Username">
-        <!-- <div class="col-md-1"></div> -->
+          <div class="row  curunt col-3">
+        <input type="number" class="form-control rounded-pill  exchangeA " placeholder="請輸入" aria-label="Username">
       </div>
       <div class="row  curunt">
-        <select class="form-select   btn-secondary " aria-label="Default select example">
+        <select class="form-select  btn-secondary seleA" aria-label="Default select example">
           <option value="TWD">台幣TWD</option>
           <option value="USD">美金USD</option>
           <option value="EUR">歐元EUR</option>
         </select>
       </div>
-        <div class="row  curunt">
-      <input type="text" class="form-control rounded-pill   " placeholder="請輸入" aria-label="Username">
-      <!-- <div class="col-md-1"></div> -->
-    </div>
+        <!-- <div class="row  curunt col-3">
+      <input type="number" class="form-control rounded-pill exchangeB  " placeholder="請輸入" aria-label="Username">
+    </div> -->
     <div class="row  curunt">
-      <select class="form-select   btn-secondary " aria-label="Default select example">
+    <div style="text-align: center; margin-top:10px; font-size: 15px;  font-weight:bold;" >兌換成</div>
+    </div>
+    <div class="row  curunt col-3">
+      <select class="form-select   rounded-pill  seleB" aria-label="Default select example">
         <option value="TWD">台幣TWD</option>
         <option value="USD">美金USD</option>
         <option value="EUR">歐元EUR</option>
       </select>
     </div>
-    <button  class=" btn btn-secondary rounded-pill  clckb " >送出</button>
+    <div class="col-md-12 addWarning " ></div>
+    <button  class=" btn btn-secondary rounded-pill  clckOut " >送出</button>
     </div>
     </main>
   </div>
@@ -216,4 +205,3 @@
 <script src="main.js"></script> 
   </body>
 </html>
-s
