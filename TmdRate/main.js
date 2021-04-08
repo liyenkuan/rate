@@ -17,7 +17,7 @@ function selRate() {
   hisRate[5] = hisR[4].data.rates[selValue];
   chartH();
 }
-sel.addEventListener("click",selRate);
+sel.addEventListener("change",selRate);
 function init(){
 
     //http://data.fixer.io/api/2020-12-31?access_key=7ddf0cca508c63297f0a700c18740446&format=1&%20base%20=%20GB&%20symbols%20=%20USD,TND,EUR
@@ -121,6 +121,7 @@ function chartH(){
         }
     });
 };
+//計算匯率功能
 let getClick  = document.querySelector(".clckOut");
 console.log(getClick);
 function countRate() {
@@ -148,3 +149,4 @@ function countRate() {
 };
 getClick.addEventListener("click",countRate);
 init();
+AOS.init();

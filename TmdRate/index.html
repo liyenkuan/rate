@@ -17,9 +17,10 @@
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-<meta name="theme-color" content="#7952b3">
-
-
+     <!-- AOS CSS & JS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <meta name="theme-color" content="#7952b3">
     <!-- <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -132,6 +133,7 @@
     </nav>
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        
         <h1 class="h2" id="chart1">曲線圖</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
               <select class="form-select btn-secondary selcun" aria-label="Default select example">
@@ -141,7 +143,10 @@
               </select>
         </div>
       </div>
-      <div id="chart" ></div>
+   
+      <div id="chart" data-aos="fade-up" data-aos-easing="linear"></div>
+ 
+    <div data-aos="fade-right">
       <h2>匯率表格</h2>
       <div class="table-responsive">
         <table class="table table-striped table-md" id = "currentRate">
@@ -165,17 +170,16 @@
           </tbody>
         </table>
       </div>
+    </div>
       <div class="row">
         <h1 class="h2" id="curv">計算幣值</h1>
         <div class="col-md-12 curValue " >請輸入數值</div>
       </div>
-
-     
         <div class="input ">
-          <div class="row  curunt col-3">
+          <div class="row  curunt col-md-3 col-xs-6">
         <input type="number" class="form-control rounded-pill  exchangeA " placeholder="請輸入" aria-label="Username">
       </div>
-      <div class="row  curunt">
+      <div class="row  curunt col-xs-3">
         <select class="form-select  btn-secondary seleA" aria-label="Default select example">
           <option value="TWD">台幣TWD</option>
           <option value="USD">美金USD</option>
@@ -201,6 +205,17 @@
     </main>
   </div>
 </div>
+<script>
+  // data-aos-duration="1000" data-aos="fade-up" data-aos-easing="linear"
+  AOS.init({
+    // offset: 120, // 以像素(px)為單位，水平移動
+    delay: 0, //延遲時間，範圍：0~ 3000
+    duration: 1400, //動畫時間，範圍：0~ 3000
+    easing: 'linear', // 動畫速率效果
+    // once:  true, // 是否重複觸發動畫
+    mirror: true, // 是否超過滾動範圍時，做移出的動畫效果
+  });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="main.js"></script> 
   </body>
