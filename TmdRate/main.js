@@ -102,7 +102,6 @@ function ratePut(){
         <td>${item.coun}</td>
         <td>${item.rat}</td>
         <td>${item.date}</td>
-        <td><a href =# >查詢</a></td>
       </tr>`
       rateH += rateAdd;
     });

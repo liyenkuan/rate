@@ -4,9 +4,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.82.0">
     <title>Rates</title>
     <!-- Load c3.css -->
     <link href="/c3-0.7.20/c3.css" rel="stylesheet">
@@ -43,111 +40,61 @@
   </head>
   <body>
     
-<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">KKO 匯率紀錄</a>
-  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
-  
-</header>
-
-<div class="container-fluid">
-  <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-      <div class="position-sticky pt-3">
-        <ul class="nav flex-column">
-          <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" tabindex="0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#chart1">
-              <span data-feather="home"></span>
-              XY線圖
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#currentRate">
-              <span data-feather="file"></span>
-              目前匯率
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#curv">
-              <span data-feather="shopping-cart"></span>
-              計算幣值
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="users"></span>
-              Customers
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="bar-chart-2"></span>
-              Reports
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="layers"></span>
-              Integrations
-            </a>
-          </li>
+<!-- <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"> -->
+  <header >
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-secondary ">
+      <div class="container-fluid " >
+        <a class="navbar-brand " style=" font-weight:bold; color: white;" href="#">KKo-匯率計算</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " style="color: white;">
+          @Kuan
         </div>
-        </ul>
-
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-          <span>Saved reports</span>
-          <a class="link-secondary" href="#" aria-label="Add a new report">
-            <span data-feather="plus-circle"></span>
-          </a>
-        </h6>
-        <ul class="nav flex-column mb-2">
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Current month
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Last quarter
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Social engagement
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Year-end sale
-            </a>
-          </li>
-        </ul>
+        <div class="collapse navbar-collapse "  id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 sidebar ">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#chart1" style=" font-weight:bold; color: white;"> XY線圖</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#currentRate" style=" font-weight:bold; color: white;">目前匯率</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="#curv"style=" font-weight:bold; color: white;"> 計算幣值</a>
+            </li>
+            <li class="nav-item">
+        </div>
       </div>
     </nav>
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        
+</header>
+<div class="container-fluid"></div>
+<div class=" overflow-hidden   d-flex flex-wrap justify-content-center banner" >
+  <div class="col-md-5  my-5 bannerText " data-aos="fade-right">
+    <h1 class="display-4 fw-normal">想知道即時匯率?</h1>
+    <p class="lead fw-normal">KKO匯率將即時更新匯率比值，讓你不需要操作各大平台複雜的貨幣系統，你可以直接觀看近期台幣升降趨勢</p>
+    <a class="btn btn-outline-light " href="#chart1">Go Start</a>
+  </div>
+ <div class="  bannerText">
+    <img src="https://i.imgur.com/vFC4Wxt.png" class="bannerIcon" data-aos="fade-left">
+  </div>
+</div>
+</div>
+
+<div class="container">
+  <div class="row">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom topone">
         <h1 class="h2" id="chart1">曲線圖</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
-              <select class="form-select btn-secondary selcun" aria-label="Default select example">
+              <select class="form-select  btn-outline-secondary selcun" aria-label="Default select example">
                 <option value="TWD">台幣TWD</option>
                 <option value="USD">美金USA</option>
                 <option value="EUR">EUR</option>
               </select>
         </div>
       </div>
-   
       <div id="chart" data-aos="fade-up" data-aos-easing="linear"></div>
- 
-    <div data-aos="fade-right">
-      <h2>匯率表格</h2>
+    <div  data-aos="fade-right">
+      <h2 class=" border-bottom topone">匯率表格</h2>
       <div class="table-responsive">
         <table class="table table-striped table-md" id = "currentRate">
           <thead style="font-size: 20px;">
@@ -156,43 +103,33 @@
               <th>country</th>
               <th>rates</th>
               <th>date</th>
-              <th>history</th>
             </tr>
           </thead>
           <tbody style="font-size: 15px;">
-            <tr>
-              <td>1,001</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
-            </tr>
+  
           </tbody>
         </table>
       </div>
     </div>
       <div class="row">
-        <h1 class="h2" id="curv">計算幣值</h1>
+        <h1 class="h2 border-bottom topone" id="curv">計算幣值</h1>
         <div class="col-md-12 curValue " >請輸入數值</div>
       </div>
-        <div class="input ">
+        <div class="input  "  data-aos="fade-up" data-aos-easing="linear">
           <div class="row  curunt col-md-3 col-xs-6">
         <input type="number" class="form-control rounded-pill  exchangeA " placeholder="請輸入" aria-label="Username">
       </div>
       <div class="row  curunt col-xs-3">
-        <select class="form-select  btn-secondary seleA" aria-label="Default select example">
+        <select class="form-select   rounded-pill seleA" aria-label="Default select example">
           <option value="TWD">台幣TWD</option>
           <option value="USD">美金USD</option>
           <option value="EUR">歐元EUR</option>
         </select>
       </div>
-        <!-- <div class="row  curunt col-3">
-      <input type="number" class="form-control rounded-pill exchangeB  " placeholder="請輸入" aria-label="Username">
-    </div> -->
-    <div class="row  curunt">
-    <div style="text-align: center; margin-top:10px; font-size: 15px;  font-weight:bold;" >兌換成</div>
+    <div class="row  ">
+    <div style="text-align: center; margin-top:20px; font-size: 15px;  font-weight:bold;" >兌換成</div>
     </div>
-    <div class="row  curunt col-3">
+    <div class="row  curunt col-xs-3">
       <select class="form-select   rounded-pill  seleB" aria-label="Default select example">
         <option value="TWD">台幣TWD</option>
         <option value="USD">美金USD</option>
@@ -202,15 +139,17 @@
     <div class="col-md-12 addWarning " ></div>
     <button  class=" btn btn-secondary rounded-pill  clckOut " >送出</button>
     </div>
-    </main>
   </div>
+</div>
+<div class="container-fluid  bg-secondary " style=" text-align: center; font-weight:bold; color: white; font-size: 20px;" >
+Kuan@2021 copyright
 </div>
 <script>
   // data-aos-duration="1000" data-aos="fade-up" data-aos-easing="linear"
   AOS.init({
     // offset: 120, // 以像素(px)為單位，水平移動
     delay: 0, //延遲時間，範圍：0~ 3000
-    duration: 1400, //動畫時間，範圍：0~ 3000
+    duration: 1000, //動畫時間，範圍：0~ 3000
     easing: 'linear', // 動畫速率效果
     // once:  true, // 是否重複觸發動畫
     mirror: true, // 是否超過滾動範圍時，做移出的動畫效果

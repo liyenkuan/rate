@@ -1,39 +1,48 @@
 
 body {
     font-size: .875rem;
+
   }
-  
+  .banner{
+    height: 800px;
+    align-items: center;
+    background-color: slategray;
+  }
+  .bannerText{
+    margin: 20px;
+    color: white;
+ }
+ .bannerIcon{
+    margin-left: 100px;
+    width: 60%;
+    align-items: center;
+ }
   .feather {
     width: 16px;
     height: 16px;
     vertical-align: text-bottom;
   }
-  
+
   /*
    * Sidebar
    */
   
-  .sidebar {
-    position: fixed;  /* 固定高度 */
-    top: 0;
-    /* rtl:raw:
-    right: 0;
-    */
-    bottom: 0;
-    /* rtl:remove */
-    left: 0;
+  .sidebar li a{
     font-size: 20px;
-    z-index: 100; /* Behind the navbar */
-    padding: 48px 0 0; /* Height of navbar */
-    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    color: #000;
   }
   
   @media (max-width: 767.98px) {
-    .sidebar {
-      top: 0rem;
+    .sidebar li a {
+      border-bottom: 1px solid #DDDDDD ;
     }
-  }
-  
+    .banner{
+      height: 700px;
+    }
+    .bannerIcon{
+      margin-left: 70px;
+    }
+}
   .sidebar-sticky {
     position: relative;
     top: 0;
@@ -71,13 +80,13 @@ body {
    * Navbar
    */
   
-  .navbar-brand {
+  /* .navbar-brand {
     padding-top: .75rem;
     padding-bottom: .75rem;
     font-size: 1rem;
     background-color: rgba(0, 0, 0, .25);
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
-  }
+  } */
   
   .navbar .navbar-toggler {
     top: .25rem;
@@ -111,13 +120,15 @@ body {
     font-size: 40px;
     margin: 0 auto;
     text-align: center;
-    background-color: #DDDDDD;
+  
     padding: 20px;
     border-radius: 30px 30px 30px 30px;
+    align-items: center;
     /* font-style: oblique; */
     font-weight:bold;
     /* color: 	#5599FF; */
- 
+    text-shadow: 0 0 60px #0044BB;
+    color :#0044BB;
   }
 .input{
   display: flex;
