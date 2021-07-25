@@ -2,8 +2,11 @@ let data = {};//請求後的資料
 let Apidate = [];//前五天日期
 let hisR = [];//前五天的資料
 let hisRate = [];//C3要的資料
-
-
+const country = ["USD","HKD","GBP","AUD","CAD","SGD","CHF","TWD","JPY","ZAR","SEK","NZD","THB","PHP","IDR","EUR","KRW","VND","MYR","CNY"];
+let inputA = document.querySelector(".exchangeA ");
+let selone = document.querySelector(".seleA");
+let seltwo = document.querySelector(".seleB");
+let showResult = document.querySelector(".curValue");
 let sel = document.querySelector(".selcun ");//選擇貨幣
 function selRate() {
   console.log(hisR);
@@ -19,7 +22,7 @@ function selRate() {
 }
 sel.addEventListener("change",selRate);
 function init(){
-
+    addOption();
     //http://data.fixer.io/api/2020-12-31?access_key=7ddf0cca508c63297f0a700c18740446&format=1&%20base%20=%20GB&%20symbols%20=%20USD,TND,EUR
     axios.get('http://data.fixer.io/api/latest?access_key=7ddf0cca508c63297f0a700c18740446&format=1')
     .then(function (response) {
@@ -78,7 +81,6 @@ function ratePut(){
     let rate = [];//最終資料
     let showTable = document.querySelector("tbody")
     //const country = Object.keys(data.data.rates);// 抓出api的國家
-    const country = ["USD","HKD","GBP","AUD","CAD","SGD","CHF","TWD","JPY","ZAR","SEK","NZD","THB","PHP","IDR","EUR","KRW","VND","MYR","CNY"];
     //console.log(country);
     //用迴圈建立有country的值加上該國家的匯率的陣列，資料整理
     country.forEach(function(item,index){     
@@ -120,15 +122,12 @@ function chartH(){
         }
     });
 };
+
 //計算匯率功能
 let getClick  = document.querySelector(".clckOut");
 console.log(getClick);
 function countRate() {
   let total = '';
-  let inputA = document.querySelector(".exchangeA ");
-  let selone = document.querySelector(".seleA");
-  let seltwo = document.querySelector(".seleB");
-  let showResult = document.querySelector(".curValue");
   let selA = selone.value;
   let selB = seltwo.value;
   let warntext = document.querySelector(".addWarning")
@@ -140,12 +139,32 @@ function countRate() {
   warntext.textContent = "";
   total = ((data.data.rates[selB]/ data.data.rates[selA])*inputA.value).toFixed(2);
   showResult.textContent =`${inputA.value}${selA}等於${total}${selB}`
-  // console.log(total);
-  // console.log(selA);
-  // console.log(selB);
-  // console.log(inputA.value);
+  selone.options.length=0;
+  seltwo.options.length=0;
+  addOption();
   }
 };
+function addOption () {
+  // selone.options.length=0;
+  // seltwo.options.length=0;
+  country.forEach((item, index) => {
+    selone.add(new Option(`${item}`,`${item}`));
+    seltwo.add(new Option(`${item}`,`${item}`));
+  })
+  // let selAA = document.selone.selectedIndex;
+  // console.log(selAA);
+  // if (selone !== '') {
+  //   seltwo
+  // }
+  console.log(selone);
+};
+selone.addEventListener("change",(objSelect) => {
+  // addOption();
+  let currSelectIndex = selone.selectedIndex;
+  console.log(currSelectIndex);
+  seltwo.options.remove(currSelectIndex);
+})
 getClick.addEventListener("click",countRate);
 init();
 AOS.init();
+// addOption();
